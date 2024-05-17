@@ -1,0 +1,59 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    int choose;
+    int days;
+    int b, d;
+    int price = 0;
+    int discount = 0;
+    int total;
+    
+    cout << "Welcome to the hotels\nPlease choose 1-hotel a day 30$, 2-hotel a day 40$, 3-hotel a day 50$: ";
+    cin >> choose;
+
+    cout << "How many days? ";
+    cin >> days;
+
+    cout << "Do you want breakfast? (1: yes, 0: no): ";
+    cin >> b;
+
+    cout << "Do you want dinner? (1: yes, 0: no): ";
+    cin >> d;
+
+    if (choose == 1) {
+        if (b == 1) {
+            price = days * 30 + 10;
+        } else if (d == 1) {
+            price = days * 30 + 15;
+        } else {
+            price = days * 30;
+        }
+    } else if (choose == 2) {
+        price = days * 40;
+    } else if (choose == 3) {
+        if (b == 1) {
+            price = days * 50 + 20;
+        } else if (d == 1) {
+            price = days * 50 + 15;
+        } else {
+            price = days * 50;
+        }
+    }
+    if (choose == 1 || days > 2) {
+        discount = (price / 100) * 10;
+    } else if (choose == 2 || days > 2) {
+        discount = (price / 100) * 15;
+    } else if (choose == 3 || days > 2) {
+        discount = (price / 100) * 2;
+    }
+
+   
+      total = price - discount;
+
+    cout << "Total price: $" << total << endl;
+
+    return 0;
+}

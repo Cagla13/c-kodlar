@@ -1,0 +1,37 @@
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+
+using namespace std;
+
+int main() {
+int player1;
+int player2;
+int raund=1;
+
+while (true){
+    player1= rand() % 5+1;
+    player2=rand() %5+1;
+    
+    cout<<"raund"<<raund<<":";
+    cout<<"player1 ("<< player1 <<")vs player2("<<player2<<")";
+    
+    if (player1>player2){
+        cout<<"win player1"<<endl;
+        break;
+        
+    }
+    else if(player2>player1){
+        cout<<"win player2"<<endl;
+        break;
+    }else {
+        cout<<"berabere"<<endl;
+    }
+}
+ 
+return 0;
+      }
+          
+          
+    
+ 

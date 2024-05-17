@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+// EBOB hesaplama fonksiyonu
+int ebob(int a, int b) {
+    if (b == 0) {
+        return a;
+    }
+    return ebob(b, a % b);
+}
+
+// EKOK hesaplama fonksiyonu
+int ekok(int a, int b) {
+    return (a * b) / ebob(a, b);
+}
+
+int main() {
+    int sayi1, sayi2;
+
+    cout << "İki sayı girin: ";
+    cin >> sayi1 >> sayi2;
+
+    int ebobSonuc = ebob(sayi1, sayi2);
+    int ekokSonuc = ekok(sayi1, sayi2);
+
+    cout << "EBOB(" << sayi1 << ", " << sayi2 << ") = " << ebobSonuc << endl;
+    cout << "EKOK(" << sayi1 << ", " << sayi2 << ") = " << ekokSonuc << endl;
+
+    return 0;
+}

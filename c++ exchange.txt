@@ -1,0 +1,35 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int para;
+    int miktar;
+    int secim;
+
+    cout << "Lütfen para birimini seçin (1/USD, 2/TL, 3/Euro): ";
+    cin >> secim;
+    cout << "Dönüştürmek istediğiniz miktarı girin: ";
+    cin >> miktar;
+
+    if (secim == 1) {
+        int tl = miktar * 20;
+        int euro = miktar * 2;
+        cout << miktar << " USD, " << tl << " TL ve " << euro << " Euro'ya eşdeğerdir." << endl;
+    }
+    else if (secim == 2) {
+        int usd = miktar / 20;
+        int euro = miktar / 40;
+        cout << miktar << " TL, " << usd << " USD ve " << euro << " Euro'ya eşdeğerdir." << endl;
+    }
+    else if (secim == 3) {
+        int tl = miktar * 40;
+        int usd = miktar / 2;
+        cout << miktar << " Euro, " << tl << " TL ve " << usd << " USD'ye eşdeğerdir." << endl;
+    }
+    else {
+        cout << "Geçersiz seçim. Lütfen 1, 2 veya 3 seçin." << endl;
+    }
+
+    return 0; // Ana fonksiyondan başarılı bir çalışmayı belirtmek için bir tamsayı (0) döndürmelisiniz.
+}
